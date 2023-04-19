@@ -10,6 +10,7 @@ public class CustomOAuth2UserInfoFactory {
     return switch (provider) {
       case GITHUB -> new GithubOAuth2UserInfo(attributes);
       case GOOGLE -> new GoogleOAuth2UserInfo(attributes);
+      case KAKAO -> new KakaoOAuth2UserInfo(attributes);
     };
   }
 }

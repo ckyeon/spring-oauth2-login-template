@@ -1,5 +1,5 @@
 # spring-oauth2-login-template
-> This template implements GitHub and Google's social login using Spring
+> This template uses Spring Boot to implement a GitHub, Google, or other social login.
 
 > Adding other social logins is easy.
 
@@ -52,5 +52,22 @@ spring:
           google:
             client-id: << github client id >>
             client-secret: << github client secret >>
+            
+          kakao:
+            client-id: << kakao client id >>
+            client-name: Kakao
+            authorization-grant-type: authorization_code
+            scope:
+              - << kakao scope >>
+              - << kakao scope >>
+              - << ... >>
+            redirect-uri: << kakao redirect uri >>
 
+        provider:
+          kakao:
+            user-name-attribute: id
+            authorization-uri: https://kauth.kakao.com/oauth/authorize
+            token-uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+            jwk-set-uri: https://kauth.kakao.com/.well-known/jwks.json
 ```

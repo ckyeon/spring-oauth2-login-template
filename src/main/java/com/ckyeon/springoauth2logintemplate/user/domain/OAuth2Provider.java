@@ -4,7 +4,8 @@ import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 
 public enum OAuth2Provider {
   GOOGLE,
-  GITHUB;
+  GITHUB,
+  KAKAO;
 
   public static OAuth2Provider getProvider(OAuth2UserRequest oAuth2UserRequest) {
     String registrationId = oAuth2UserRequest.getClientRegistration().getRegistrationId();
